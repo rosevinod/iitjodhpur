@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>IIT-Login</title>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/login.js"></script>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>Login Page</h1>
+        <div class="card">
+            <div class="card-header">Login</div>
+            <div class="card-body">
+                <form id="login-form" action="./login.php" method="post" name="login-form">
+                    <div class="mb-3">                        
+                        <input id="email" class="form-control" name="email" type="email" placeholder="Enter email" required>
+                    </div>
+                    <div class="mb-3">                        
+                        <input id="password" class="form-control" name="password" type="password" placeholder="Password" required>
+                    </div>
+                    <button id="login" class="btn btn-primary" type="submit">Login</button>
+                </form> 
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
