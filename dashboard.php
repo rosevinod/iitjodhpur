@@ -20,11 +20,16 @@ $result = $conn->query($sql);
 <head>
     <title>View Page</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!--jqurey 3.7.0 -->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/header.js"></script>
+    <script type="text/javascript" src="js/footer.js"></script>
+
 </head>
 
-<body>
-
-    <div class="container">
+<body class="container">
+    <header id="header"></header>
+    <div>
         <h2>users</h2>
         <table class="table table-bordered">
             <thead>
@@ -44,7 +49,7 @@ $result = $conn->query($sql);
                         echo "<tr>";
                         echo "<th scope='row'>{$row['guid']}</th>";
                         echo "<td>{$row['email']}</td>";
-                        echo "<td>{$row['PASSWORD']}</td>";
+                        echo "<td>{$row['password']}</td>";
                         echo "<td><a class='btn btn-info' href='update.php?guid={$row['guid']}'>Edit</a>&nbsp;<a class='btn btn-danger' href='delete.php?guid={$row['guid']}'>Delete</a></td>";
                         echo "</tr>";
                     }
@@ -56,7 +61,7 @@ $result = $conn->query($sql);
         </table>
 
     </div>
-
+    <footer id="footer"></footer>
 </body>
 
 </html>
