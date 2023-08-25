@@ -50,7 +50,7 @@ $result = $conn->query($sql);
                         echo "<th scope='row'>{$row['guid']}</th>";
                         echo "<td>{$row['email']}</td>";
                         echo "<td>{$row['password']}</td>";
-                        echo "<td><a class='btn btn-info' href='update.php?guid={$row['guid']}'>Edit</a>&nbsp;<a class='btn btn-danger' href='delete.php?guid={$row['guid']}'>Delete</a></td>";
+                        echo "<td><a class='btn btn-info' href='update.html?guid={$row['guid']}'>Edit</a>&nbsp;<a class='btn btn-danger' href='delete.php?guid={$row['guid']}'>Delete</a></td>";
                         echo "</tr>";
                     }
                 }
