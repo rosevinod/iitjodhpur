@@ -80,6 +80,8 @@ $json_data = json_decode($data, true); // convert to array
 
 file_put_contents("store.json",$data); // save json data into file
 
+join(',',$arry)
+
 ---- ajax --
 
 
@@ -160,7 +162,14 @@ $(function () {
 	<input class="form-control" //type="email", type="password", type="text"
 	<input class="form-check-input" // for checkbox and radio
 	<select class="form-select" // for select
-	
+
+//dashboard
+<table class="table table-bordered">
+thead > tr > th scope="col"/th
+tbody > tr > th scope='row'/td
+class='btn btn-info'
+class='btn btn-danger'
+
 ///
 file upload
 
