@@ -1,0 +1,244 @@
+<?php
+
+/* -- CREATE DATABASE ncrb CHARACTER SET UTF8 COLLATE utf8_general_ci;*/
+
+CREATE DATABASE ncrb2 CHARSET=UTF8 COLLATE=utf8_general_ci
+
+CREATE TABLE users ( `guid` VARCHAR(255) NOT NULL, `email` VARCHAR(255) NOT NULL, `PASSWORD` VARCHAR(255) NOT NULL, PRIMARY KEY(guid) ) ENGINE=INNODB DEFAULT CHARSET=UTF8 COLLATE=utf8_general_ci
+
+INSERT INTO employee (`name`,`salary`) VALUES ('namita',1000);
+
+INSERT INTO employee SET `name` = 'soch', `salary` = 5
+
+UPDATE employee SET `name` = 'namita g', `salary` = '1201' WHERE `name` = 'namita'
+
+DELETE FROM employee WHERE `name` = 'gobhi'
+
+
+// host,user,pass,db
+$conn = new mysqli("localhost", "root", "root", "ncrb");
+
+if ($conn->connect_error) {
+die($conn->connect_error);
+}
+
+require_once  "config.php";
+
+if (isset($_POST['email'])) 
+
+md5 , uniqid()
+
+$result = $conn->query($sql);
+
+if($result) 
+
+$conn->close();
+
+
+empty($_POST['email']
+
+filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)
+
+
+$error = array();
+$res = array();
+
+$resp['msg'] = $error; // array inside array
+$resp['status'] = false;
+echo json_encode($resp);
+
+
+if ($result->num_rows > 0) 
+
+session_start();
+$_SESSION['session_email'] = $_POST['email'];
+
+
+--
+logout
+session_start(); 
+session_destroy(); 
+header('location: index.html');
+
+-- dashboard
+
+session_start();
+
+if (empty($_SESSION['session_email'])) {
+    header('location: ./index.html');
+}
+
+
+while ($row = $result->fetch_assoc()) {
+
+--
+json data
+
+$data = file_get_contents($json_url or file_path);
+
+$json_data = json_decode($data, true); // convert to array 
+
+file_put_contents("store.json",$data); // save json data into file
+
+---- ajax --
+
+
+$(function () {
+    
+    $('#login').click(function (e) {
+
+        let self = $(this);
+
+        e.preventDefault(); // prevent default submit behavior
+
+        var data = $('#login-form').serialize(); // get form data
+
+        // sending ajax request to login.php file, it will process login request and give response.
+        $.ajax({
+            url: './login.php',
+            type: "POST",
+            data: data,
+        }).done(function (res) {
+            res = JSON.parse(res); 
+            console.log(res);
+            if (res['status']) // if login successful redirect user to secure.php page.
+            {
+                location.href = "dashboard.php"; // redirect user to secure.php location/page.
+            } else {
+                var errorMessage = "";
+                $.each(res['msg'], function(index, message) {
+                    errorMessage += '' + message + '';
+                });
+                alert(errorMessage);
+                                
+            }
+        }).fail(function () {
+            alert("POST error.");
+        });
+    });
+});
+
+
+------
+
+
+
+$(function () {
+
+    $.ajax({
+        url: './header.html',
+        type: "GET"        
+    }).done(function (res) {
+        $("#header").html(res);
+    }).fail(function () {
+        alert("POST error.");
+    });
+
+});
+
+
+
+------
+// warning don't mix style and script tags
+<script type="text/javascript" src="js/jquery.min.js"></script>
+
+// warning don't mix style and link tags.
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+<body class="container">
+<div class="card">
+	<div class="card-header">name of header</div>
+	<div class="card-body">
+	 
+	 // form-group = provide margin top
+	<div class="form-group"> one input type email </div> 
+	<div class="form-group"> one input type checkbox</div>  
+	<div class="form-group"> one input type radio </div>  	 
+	 
+	// content
+	<input class="form-control" //type="email", type="password", type="text"
+	<input class="form-check-input" // for checkbox and radio
+	<select class="form-select" // for select
+	
+///
+file upload
+
+<form enctype="multipart/form-data"
+
+<input type="file"
+
+$_FILES['file']['name'], $_FILES['file']['size'], $_FILES['file']['tmp_name']
+
+pathinfo($file_name,PATHINFO_EXTENSION)
+			
+file_exists('file path');
+
+move_uploaded_file(tmp,to_server)
+
+----
+
+$url = 'https://reqres.in/api/register';
+$data = ["email"=> "eve.holt@reqres.in","password" => "pistol1"];
+
+ 
+$json = json_encode($data);
+
+$ch = curl_init($url); 
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+curl_setopt($ch, CURLOPT_POSTFIELDS, $json);
+curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+    'Content-Type: application/json'
+));
+ 
+$response = curl_exec($ch);
+if(curl_errno($ch)) {
+    echo 'Error: ' . curl_error($ch);
+} else {
+    echo $response;
+}
+curl_close($ch);
+
+/*
+header("Content-Type:application/json");
+$data = file_get_contents('php://input');
+print $data;
+
+*/
+
+----
+
+/*{
+    "require": {
+       "guzzlehttp/guzzle": "^7.0",
+       "php": "^7.3||^8.0"
+    }
+ }
+ 
+ composer install 
+ copy paste vendor folder in project
+ 
+ */
+require __DIR__ . '/vendor/autoload.php';
+
+use GuzzleHttp\Client;
+
+// // Create a client with a base URI
+ $client = new GuzzleHttp\Client(['base_uri' => 'https://reqres.in/api/']);
+
+// // Send a request to https://foo.com/api/test
+$response = $client->request('GET', 'users');
+
+echo '<pre>';print_r(json_decode($response->getBody(),true));echo '</pre>';
+
+// Provide the body as a string.
+$response = $client->request('POST', 'register', [
+    'form_params' => ["email"=> "eve.holt@reqres.in",
+    "password" => "pistol"]
+]);
+
+
+echo '<pre>';print_r(json_decode($response->getBody(),true));echo '</pre>';
+
+
